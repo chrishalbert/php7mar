@@ -55,9 +55,9 @@ class options {
 		'f'	=> [
 			'option'		=> self::OPTION_REQUIRED,
 			'value' 		=> self::VALUE_REQUIRED,
-			'comment'		=> 'Path to the file or folder to run against.',
+			'comment'		=> 'Path to the files or folders to run against.',
 			'description'	=> 'The location of the file or folder to use for generating the report.  A fully qualified path is recommended.  Relative paths will be based off the php7mar folder.',
-			'example'		=> '-f="/path/to/folder"'
+			'example'		=> '-f="/path/to/folder,path/to/file"',
 		],
 		'r'	=> [
 			'option'		=> self::OPTION_OPTIONAL,
@@ -78,6 +78,13 @@ class options {
 				'syntax'
 			]
 		],
+    'e'	=> [
+      'option'		=> self::OPTION_OPTIONAL,
+      'value' 		=> self::VALUE_REQUIRED,
+      'comment'		=> 'Exclusion tag to ignore next line nuance.',
+      'description'	=> 'Add // @excludeNextLine on the line above a nuance, for instance, and it will not come up in subsequent results.',
+      'example'		=> '-t="@excludeNextLine"'
+    ],
 		'x' => [
 			'option'			=> self::OPTION_OPTIONAL,
 			'value'				=> self::VALUE_REQUIRED,

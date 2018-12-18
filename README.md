@@ -67,6 +67,16 @@ Give a try, use the included `testcases.php` to generate a report:
 		*Example: -x="php,inc"*
 ```
 
+**-e**
+```
+	Exclusion tags that you can add above a line that is being flagged. Most useful for nuances which will remain in subsequent reports.
+		*Example: -e="@ignoreNextLine"*
+		Code:
+		// @ignoreNextLine
+		foreach ($array as &$byRef) {
+	
+```
+
 **--php**
 ```
 	File path to the PHP binary to use for syntax checking.

@@ -142,8 +142,7 @@ class main {
 				// on the line before. -x="@fakeBug" and then on the line before nuance, you can
 				// include the following and it won't come up in subsequent reports:
 				// @fakeBug
-				$exclusionTag = $this->options->getOption('x');
-				$exclusionTag = is_array($exclusionTag) ? array_shift($exclusionTag) : false;
+				$exclusionTag = $this->options->getOption('e');
 				if ($exclusionTag && isset($lines[$index-1]) && strpos($lines[$index-1], $exclusionTag)) {
 					continue;
 				}
