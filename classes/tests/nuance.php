@@ -8,7 +8,7 @@
  * @link       https://github.com/Alexia/php7mar
  */
 
-namespace alexia\mar\tests;
+namespace ChrisHalbert\mar\tests;
 
 class nuance {
 	/**

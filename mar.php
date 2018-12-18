@@ -8,7 +8,7 @@
  * @link       https://github.com/Alexia/php7mar
  */
 
-namespace alexia\mar;
+namespace ChrisHalbert\mar;
 
 class main {
 	/**
@@ -171,7 +171,7 @@ class main {
 	 * @return	void
 	 */
 	static public function autoloader($className) {
-		$className = str_replace('alexia\\mar\\', '', $className);
+		$className = str_replace('ChrisHalbert\\mar\\', '', $className);
 		$file = PHP7MAR_DIR.DIRECTORY_SEPARATOR.'classes'.DIRECTORY_SEPARATOR.str_replace('\\', DIRECTORY_SEPARATOR, $className).'.php';
 		if (is_file($file)) {
 			require_once($file);
