@@ -137,6 +137,17 @@ class main {
 
 				$totalLines++;
 				$issues = $this->tests->testLine($line);
+
+				// If an exclusion arg is passed, developers can denote a nuance as being checked
+				// on the line before. -x="@fakeBug" and then on the line before nuance, you can
+				// include the following and it won't come up in subsequent reports:
+				// @fakeBug
+				$exclusionTag = $this->options->getOption('x');
+				$exclusionTag = is_array($exclusionTag) ? array_shift($exclusionTag) : false;
+				if ($exclusionTag && isset($lines[$index-1]) && strpos($lines[$index-1], $exclusionTag)) {
+					continue;
+				}
+
 				foreach ($issues as $section => $tests) {
 					foreach ($tests as $test => $true) {
 						$this->reporter->addToSection($section, $test, $filePath, $lineNumber, $line);
